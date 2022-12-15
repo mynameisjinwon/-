@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글작성</title>
+<link rel="stylesheet" type="text/css" href="/css/new_board.css">
+</head>
+<body>
+	<div class="container">
+		<form action="/board" method="post">
+			<div class="input_area">
+				<label class="text_label"><h4> ID </h4></label>
+				<input type="text" name="b_author_id" maxlength="6" required>
+				<label class="text_label"><h4> PW </h4></label>
+				<input type="password" name="b_author_pw" maxlength="15"required>
+			</div>
+			<div class="input_title_area">
+				<label class="text_label"><h4> 글 제목 </h4></label>
+				<input type="text" name="b_title" maxlength="30" required>
+			</div>
+			<div class="input_textarea">
+				<label class="text_label"><h4>글 내용</h4></label>
+				<textarea name="b_content" maxlength="600" required> </textarea>
+			</div>
+			<input type="hidden" name="like_count" value="0">
+			<div class="button_area">
+				<button type="submit"> 제출 </button> 
+				<button type="reset"> 취소 </button>
+				<button type="submit" onclick="location.href='/'"> 글 목록 </button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

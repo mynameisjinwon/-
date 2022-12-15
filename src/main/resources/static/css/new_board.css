@@ -1,0 +1,63 @@
+@charset "UTF-8";
+	.container {
+		display: flex;
+		flex-direction: column;
+		height: 700px;
+		width: 700px;		
+	}
+	.container input {
+		width: 250px;
+		height: 25px;
+		margin: 10px 10px;
+		border: 1px solid #E0E0E0;
+	}	
+	.input_area, .input_title_area{
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+	.input_textarea {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+	}
+	button{
+		width: 120px;
+		height: 25px;
+		margin: 20px 10px;
+		background: blue;
+		color: white;
+		border: 0px solid;
+		border-radius: 5px;
+	}
+	button:hover{
+		background: #2a69ff;
+	}
+	.button_area {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.text_title {
+		width: 480px;
+		height: 25px;
+	}
+	.input_title_area input {
+		width: 480px;
+		height: 25px;
+	}
+	.input_area input {
+		width: 180px;
+		height: 25px;
+		margin: 10px 10px;
+	}	
+	.container textarea {
+		width: 600px;
+		height: 200px;
+		resize: none;
+		border: 1px solid #E0E0E0;
+	}
+	.text_label {
+		width: 80px;
+		margin: 0px 10px;
+	}

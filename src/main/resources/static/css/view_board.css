@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 550px;
+		width: 700px;		
+	}
+	.input_area {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+	.input_textarea {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+	}
+	.button_area, .like_area{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	button{
+		width: 120px;
+		height: 25px;
+		margin: 20px 10px;
+		background: blue;
+		color: white;
+		border: 0px solid;
+		border-radius: 5px;
+	}
+	button:hover{
+		background: #2a69ff;
+	}
+	.like_count {
+		margin: 10px 30px;
+	}
+	.like_count h3{
+		color: red;
+	}
+	.container input {
+		width: 250px;
+		height: 25px;
+		margin: 10px 10px;
+		border: 1px solid #E0E0E0;
+	}	
+	.container textarea {
+		width: 600px;
+		height: 200px;
+		resize: none;
+	}
+	.text_label {
+		width: 80px;
+		margin: 0px 10px;
+	}
+	.title_label {
+		width: 480px;
+		margin: 0px 10px;
+	}
+	.content_label {
+		border: 1px solid #E0E0E0;
+		width: 560px;
+		height: 200px;
+		margin: 0px 10px;
+		overflow: scroll;
+	}
+	.comment_container {
+		width: 700px;
+		height: auto;
+		background: #f3f3f3;
+	}
+	.comment_edit_area {
+		display: flex;
+		align-items: start;
+		border-top: 1px solid blue;
+		border-top: 1px solid blue;
+		padding: 20px;
+	}
+	.comment_area {
+		display: flex;
+		align-items: start;
+		border-top: 1px solid blue;
+	}
+	.comment_text_area textarea {
+		width: 380px;
+		height: 82px;
+		resize: none;
+	}
+	.author_input_area {
+		display: flex;
+		flex-direction: column;
+		margin : 0px;
+	}
+	.author_input_area input {
+		width: 100px;
+		height: 25px;
+		margin: 5px 10px;
+	}
+	.comment_button_area {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.comments_list {
+		height: auto;
+		margin: 30px 0px;
+	}
+	.comments_author_id_div {
+		width: 110px;
+		margin: 20px 10px;
+		background: white;
+		text-align: center;
+		border: 1px solid #e6e6e6;
+	}
+	.comments_text_area {
+		width: 420px;
+		height: 100px;
+		margin: 20px 0px;
+		background: white;
+		border: 1px solid #e6e6e6;
+	}
+	.comments_button {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 150px;	
+		padding-top: 25px;
+	}
+	.comments_button input {
+		width: 100px;
+	}
+	.comments_date {
+		font-size: 10pt;
+	}
+	.comments_button button {
+		width: 100px;
+	}
+	
+	

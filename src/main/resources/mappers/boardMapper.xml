@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.abnew.model.board.BoardDao">
+	<insert id="postNewBoard" parameterType="com.abnew.model.board.Board">
+		insert into board (b_id, b_author_id, b_author_pw, b_title, b_content, b_like_count, b_date)
+		values( b_seq.nextval, #{b_author_id}, #{b_author_pw}, #{b_title}, #{b_content}, #{b_like_count}, #{b_date})
+	</insert>
+    <select id="getBoardList" resultType="com.abnew.model.board.Board">
+        SELECT b_id, b_author_id, b_author_pw, b_title, b_content, b_like_count, b_date, comments_count
+        from board order by b_id ${order}
+    </select>
+    <select id="getBoardById" resultType="com.abnew.model.board.Board">
+    	select * from board where b_id = #{id}
+    </select>
+    <update id="updateBoard" parameterType="com.abnew.model.board.Board">
+    	update board set b_title = #{b_title}, b_content = #{b_content} where b_id = #{b_id}
+    </update>
+    <update id="updateLikeCount" parameterType="com.abnew.model.board.Board">
+    	update board set b_like_count = #{b_like_count} where b_id = #{b_id}
+    </update>
+    <update id="updateCommentsCount" parameterType="com.abnew.model.board.Board">
+    	update board set comments_count = #{comments_count} where b_id = #{b_id}
+    </update>
+    <delete id="deleteBoard">
+    	delete from board where b_id = #{b_id}
+    </delete>
+</mapper>

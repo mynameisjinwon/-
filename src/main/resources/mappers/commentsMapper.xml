@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.abnew.model.comments.CommentsDao">
+	<insert id="createNewComments" parameterType="com.abnew.model.comments.Comments">
+		insert into comments (b_id, c_id, c_author_id, c_author_pw, c_content, c_date) 
+		values(#{b_id}, c_seq.nextval, #{c_author_id}, #{c_author_pw}, #{c_content}, #{c_date})
+	</insert>
+	<select id="getAllComments" resultType="com.abnew.model.comments.Comments">
+		select * from comments
+	</select>
+	<select id="getAllCommentsByB_id" resultType="com.abnew.model.comments.Comments">
+		select * from comments where b_id = #{b_id}
+	</select>
+	<select id="getCommentsCount" resultType="int">
+		select count(*) from comments where b_id = #{b_id}
+	</select>
+	<delete id="deleteCommentsById">
+		delete from comments where c_id = #{c_id}
+	</delete>
+</mapper>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글목록</title>
+
+<style>
+	table {
+	 	table-layout:fixed
+ 	}
+	.board_list_table {
+		border-collapse: collapse;
+		width: 800px;
+	}
+	.table_header {
+		background: tomato;
+		color: white;
+	}
+	td {
+		text-align: center;
+		text-overflow: ellipsis;
+		overflow:hidden;
+		white-space:nowrap;
+	}
+	.b_id {
+		width: 80px;
+	}
+	.author_id {
+		width: 160px;
+	}
+	.date {
+		width: 180px;
+	}
+	.like_count, .comments_count {
+		width: 80px;
+	}
+	tbody tr:hover{
+		background: coral;
+	}
+</style>
+
+</head>
+<body>
+		<div class="container" id="main">
+				<table class="board_list_table">
+					<thead>
+						<tr class="table_header">
+							<th class="b_id">번호</th>
+							<th class="author_id">작성자</th>
+							<th class="title">제목</th>
+							<th class="date">작성일</th>
+							<th class="comments_count">댓글</th>
+							<th class="like_count">좋아요</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#boards}}
+						<tr class="tr_board_list" onclick="location.href='/board/view/{{b_id}}'">
+							<td class="b_id">{{b_id}}</td>
+							<td class="author_id">{{b_author_id}}</td>
+							<td class="title">{{b_title}}</td>
+							<td class="date">{{b_date}}</td>
+							<td class="comments_count">{{comments_count}}</th>
+							<td class="like_count">{{b_like_count}}</td>
+						</tr>
+						{{/boards}}
+					</tbody>
+				</table>
+				<button type="button" onclick="location.href='/board'"> 글작성 </button>
+	</div>
+</body>
+</html>
