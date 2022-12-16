@@ -33,7 +33,7 @@ public class BoardController {
 	@GetMapping("/")
 	public String board(Model model) {
 		model.addAttribute("boards", boardService.getBoardList());
-		log.debug("boards : {}", boardService.getBoardList());
+		
 		return "board/board_list";
 	}
 	
@@ -43,6 +43,7 @@ public class BoardController {
 		
 		Board board = boardService.getBoardById(id);
 		int comments_count = board.getComments_count();
+		log.debug("board : {}", board);
 		
 		if( comments_count > 0) {
 			model.addAttribute("comments_list", commentsService.getAllCommentsByB_id(id));
@@ -50,7 +51,6 @@ public class BoardController {
 		}
 		
 		model.addAttribute("board", board);
-		log.debug("viewBoard() b_id : {}", id);
 		
 		return "board/view_board";
 	}
@@ -64,13 +64,24 @@ public class BoardController {
 	// 게시글 등록
 	@PostMapping("/board") 
 	public String createNewBoard(Board board) {
-
 		
 		board.setB_like_count(0);
 		board.setB_date(getNow());
 		board.setComments_count(0);
+		// 줄 바꿈 처리하기위한 작업
+
+		String content = board.getB_content();
 		
-		int result = boardService.postNewBoard(board);
+		// 내용이 1999B 를 초과하면 이전페이지로
+		if(content.getBytes().length > 1999) {
+			log.debug("최대 길이 초과");
+			return "redirect:/board/view" + board.getB_id();
+		}
+		
+		content = content.replace("\r\n", "<br>");
+		board.setB_content(content);
+		
+		boardService.postNewBoard(board);
 		
 		return "redirect:/";
 	}
@@ -85,7 +96,7 @@ public class BoardController {
 		}
 		model.addAttribute("board", board);
 		
-		return "/board/update_board";
+		return "board/update_board";
 	}
 	
 	// 글 수정
