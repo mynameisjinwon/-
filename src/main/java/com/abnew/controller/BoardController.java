@@ -42,9 +42,11 @@ public class BoardController {
 	public String viewBoard(@PathVariable Integer id, Model model) {
 		
 		Board board = boardService.getBoardById(id);
+		int comments_count = board.getComments_count();
 		
-		if(board.getComments_count() > 0) {
+		if( comments_count > 0) {
 			model.addAttribute("comments_list", commentsService.getAllCommentsByB_id(id));
+			model.addAttribute("comments_count", comments_count);
 		}
 		
 		model.addAttribute("board", board);
@@ -61,13 +63,14 @@ public class BoardController {
 	
 	// 게시글 등록
 	@PostMapping("/board") 
-	public String createNewBoard(Board board, @RequestParam("like_count") String like_count) {
+	public String createNewBoard(Board board) {
 
-		board.setB_like_count(Integer.parseInt(like_count));
+		
+		board.setB_like_count(0);
 		board.setB_date(getNow());
+		board.setComments_count(0);
 		
 		int result = boardService.postNewBoard(board);
-		log.debug("result : {}", result);
 		
 		return "redirect:/";
 	}

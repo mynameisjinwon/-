@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	{{#board}}
@@ -51,11 +52,13 @@
 				<button type="submit" onclick="location.href='/'"> 글 목록 </button>
 			</div>
 		</form>
-	</div>
-	<div class="comment_container">
 
-				<div class="comments_list">
+		<div class="comment_container">
+
+			<div class="comments_count"> <h4> 댓글 <font color="red">{{comments_count}}</font>개  </h4></div>
+			<div class="comments_list">
 				{{#comments_list}}
+				
 				<form action="/board/comments/delete/{{c_id}}" method="post">
 					<input type="hidden" name="b_id" value="{{b_id}}">
 					<div class="comment_area">
@@ -73,7 +76,7 @@
 					</div>
 				</form>
 				{{/comments_list}}
-				</div>
+			</div>
 			<form action="/board/comments/{{b_id}}" method="post">
 				<div class="comment_edit_area">
 					<div class="author_input_area">
@@ -92,8 +95,9 @@
 					</div>
 				</div>
 			</form>
-	
-{{/board}}
+
+			{{/board}}
+		</div>
 	</div>
 </body>
 

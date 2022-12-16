@@ -2,8 +2,14 @@
 	.container {
 		display: flex;
 		flex-direction: column;
-		height: 700px;
-		width: 700px;		
+		height: 100%;
+		width: 100%;		
+	}
+	.subcontainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	.container input {
 		width: 250px;
@@ -32,6 +38,7 @@
 	}
 	button:hover{
 		background: #2a69ff;
+		cursor: pointer;
 	}
 	.button_area {
 		display: flex;

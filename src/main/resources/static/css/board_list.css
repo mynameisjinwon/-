@@ -1,0 +1,55 @@
+@charset "UTF-8";
+	.container {
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	table {
+	 	table-layout:fixed
+ 	}
+	.board_list_table {
+		border-collapse: collapse;
+		width: 800px;
+	}
+	.table_header {
+		background: blue;
+		color: white;
+	}
+	button{
+		width: 120px;
+		height: 25px;
+		margin: 20px 10px;
+		background: blue;
+		color: white;
+		border: 0px solid;
+		border-radius: 5px;
+	}
+	button:hover{
+		background: #2a69ff;
+		cursor: pointer;
+	}
+	td {
+		text-align: center;
+		text-overflow: ellipsis;
+		overflow:hidden;
+		white-space:nowrap;
+	}
+	.b_id {
+		width: 80px;
+	}
+	.author_id {
+		width: 160px;
+	}
+	.date {
+		width: 180px;
+	}
+	.like_count, .comments_count {
+		width: 80px;
+	}
+	tbody tr:hover{
+		background: #2a69ff;
+	}
+	tbody td:hover{
+		text-decoration: underline;
+		cursor: pointer;
+	}

@@ -14,9 +14,11 @@
 	<version>1.0</version>
 	<name>anonymous_board</name>
 	<description>anonymous board</description>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -4,8 +4,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		height: 550px;
-		width: 700px;		
+		height: 100%;
+		width: 100%;		
 	}
 	.input_area {
 		display: flex;
@@ -34,6 +34,7 @@
 	}
 	button:hover{
 		background: #2a69ff;
+		cursor: pointer;
 	}
 	.like_count {
 		margin: 10px 30px;
@@ -76,13 +77,15 @@
 		display: flex;
 		align-items: start;
 		border-top: 1px solid blue;
-		border-top: 1px solid blue;
 		padding: 20px;
 	}
 	.comment_area {
 		display: flex;
 		align-items: start;
 		border-top: 1px solid blue;
+	}
+	.comments_count {
+		margin-left: 20px;	
 	}
 	.comment_text_area textarea {
 		width: 380px;
